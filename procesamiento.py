@@ -88,7 +88,7 @@ def crea_dataframe(movimientos):
 def new_features(df, monto="Monto", fecha="Fecha", destino="Destino"):
     
     df['Direction'] = np.where(df[monto] > 0, "IN", "OUT")
-    df[fecha] = pd.to_datetime(df[fecha], format='%d/%m/%y')
+    df[fecha] = pd.to_datetime(df[fecha], format='%m/%d/%y')
     df['Mes'] = [i.month for i in df[fecha]]
     df['Año'] = [i.year for i in df[fecha]]
     df['Dia de la semana'] = df[fecha].apply(lambda x: dt.datetime.strftime(x, '%A'))
