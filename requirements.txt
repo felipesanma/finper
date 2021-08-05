@@ -8,3 +8,4 @@ plotly==4.14.3
 fintoc==0.3.1
 numpy==1.21.1
 Pillow==8.3.1
+ffmpeg-python==0.2.0
