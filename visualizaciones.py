@@ -59,7 +59,7 @@ def ingresos_gastos_timeseries(ingresos_monthly, gastos_monthly, df_monthly, cur
     fig.update_yaxes(hoverformat="$d")
     fig.update_layout(barmode='overlay')
     fig.update_layout(hovermode="x unified")
-    fig.update_layout(height=750)
+    fig.update_layout(height=550)
     fig.update_layout(title=format_title("Mis ingresos y gastos", f"Por mes, a partir del {new_date}"))
     
     return fig
@@ -94,7 +94,7 @@ def origen_destino_dinero_sankey(sankey_data, date):
           #color = node_colors
     ))])
     
-    fig.update_layout(height=750)
+    fig.update_layout(height=600)
     fig.update_layout(title=format_title("Origen y destino de mi dinero", f"TOP 10 acumulado desde el {new_date} hasta hoy"))
     #fig.update_layout(title_text="Origen y destino de mi dinero",
     #                  font_size=10)
