@@ -215,6 +215,7 @@ def prepara_para_sankey(ingresos, gastos):
     'Monto':'sum'
     }).reset_index()
     ingresos_tipo['Destino'] = 'Yo'
+    ingresos_tipo = ingresos_tipo.sort_values(['Monto'], ascending=False).head(5).reset_index(drop=True)
     ingresos_tipo.columns = ['Fuente', 'Monto', 'Destino']
     
     gastos_tipo = gastos.groupby(["Tipo"]).agg({
@@ -222,6 +223,7 @@ def prepara_para_sankey(ingresos, gastos):
     }).reset_index()
     gastos_tipo['Fuente'] = "Yo"
     gastos_tipo.columns = ['Destino', 'Monto', 'Fuente']
+    gastos_tipo = gastos_tipo.sort_values(['Monto'], ascending=False).head(5).reset_index(drop=True)
     gastos_tipo = gastos_tipo.loc[:,['Fuente', 'Destino', 'Monto']]
     
     dfes_sankey = [gastos_grouped, ingresos_grouped, ingresos_tipo, gastos_tipo]
