@@ -117,7 +117,9 @@ def indicador_dinero_disponible(monto_actual):
     return fig
     #fig.show()
     
-def plotly_table(filter_table, style=True,ancho_columnas=[0.5,0.5,0.5,2]):
+def plotly_table(filter_table, style=True,ancho_columnas=None):
+    if ancho_columnas is None:
+        ancho_columnas = [0.5,0.5,0.5,2]
     header_values = list(filter_table.columns)
     cell_values = []
     for index in range(0, len(filter_table.columns)):
